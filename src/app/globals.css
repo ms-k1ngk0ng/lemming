@@ -16,7 +16,29 @@
   }
 }
 
+@font-face {
+  font-family: 'Bungee';
+  src: url('/Bungee-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BungeeShade';
+  src: url('/BungeeShade-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LibreCaslon';
+  src: url('/LibreCaslonText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  font-family: 'Bungee';
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
