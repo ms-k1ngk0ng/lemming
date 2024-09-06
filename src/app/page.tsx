@@ -15,6 +15,7 @@ export default function LandingPage() {
       >
         lemming
       </Typography>
+      <Typography>Monkey see, monkey do.</Typography>
       <nav>
         <Link href="/authentication/login" variant="body1" fontFamily="LibreCaslon" sx={{ mr: 2 }}>
           Login
