@@ -9,6 +9,7 @@ type Person = {
   groups: string[];
   pic?: string;
   status?: string;
+  self?: boolean;
 }
 
 const ProposalResponses = [

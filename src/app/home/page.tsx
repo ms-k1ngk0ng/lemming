@@ -11,8 +11,8 @@ type Person = {
   id: number;
   name: string;
   groups: string[];
-  pic: string;
-  status: string;
+  pic?: string;
+  status?: string;
   self?: boolean;
 }
 
