@@ -5,6 +5,7 @@ import React from 'react';
 import AuthForm from '../authForm';
 import { useRouter } from 'next/navigation';
 
+
 const SignupPage: React.FC = () => {
 
   const router = useRouter(); // Get the router instance

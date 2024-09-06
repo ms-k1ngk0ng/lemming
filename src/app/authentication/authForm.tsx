@@ -13,7 +13,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [photo, setPhoto] = useState<File | undefined>(null);
+  const [photo, setPhoto] = useState<File | undefined>();
   const [photoName, setPhotoName] = useState<string>(''); // For displaying the photo name
 
   const handleSubmit = (e: React.FormEvent) => {

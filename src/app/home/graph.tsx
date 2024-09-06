@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
-import { Circle } from '@mui/icons-material';
 
 type Node = {
   id: string;
@@ -142,8 +141,8 @@ const Graph: React.FC<{
 
       link
         .style('stroke', d => {
-          const sourceNode = data.nodes.find(n => n.id === d.source.id);
-          const targetNode = data.nodes.find(n => n.id === d.target.id);
+          const sourceNode = data.nodes.find(n => n.id === d.source);
+          const targetNode = data.nodes.find(n => n.id === d.target);
           return sourceNode?.foccused === targetNode?.foccused ? (focusColor || '#000') : '#ddd';
         });
     };
@@ -202,8 +201,8 @@ const Graph: React.FC<{
               <Button 
                 sx={{ 
                   position: 'absolute', 
-                  top: `${node.y - 85}px`, 
-                  left: `${node.x - 85}px`, 
+                  top: `${(node.y || 85) - 85}px`, 
+                  left: `${(node.x || 85) - 85}px`, 
                   width: '170px', 
                   height: '170px', 
                   border: '1px solid Pink',
