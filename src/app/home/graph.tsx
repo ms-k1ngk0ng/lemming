@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 
 type Node = {
   id: string;
-  pic: string;
+  pic?: string;
   x?: number;
   y?: number;
   status?: string;
@@ -61,9 +61,8 @@ const Graph: React.FC<{
 
     const data: GraphData = {
       nodes: network.map((person, index) => ({
-        self: person.self,
+        self: person.self || false,
         id: `node-${index}`,
-        name: person.name,
         pic: person.pic,
         status: person.status,
         foccused: focusGroup ? (person.groups.includes(focusGroup)) : true
@@ -112,7 +111,7 @@ const Graph: React.FC<{
       .attr('width', 1)
       .attr('height', 1)
       .append('image')
-      .attr('xlink:href', d => d.pic)
+      .attr('xlink:href', d => d.pic || '')
       .attr('width', d => d.self ? 170 : 120)
       .attr('height', d => d.self ? 170 : 120);
 
