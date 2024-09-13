@@ -37,6 +37,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'JostItalic';
+  src: url('/Jost-Italic-VariableFont_wght.tff') format(truetype);
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/Jost-VariableFont_wght.tff') format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Bungee';
   color: rgb(var(--foreground-rgb));

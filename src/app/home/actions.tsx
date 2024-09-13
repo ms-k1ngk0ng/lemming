@@ -104,7 +104,7 @@ const Actions: React.FC<{
   };
 
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" sx={{ justifySelf: 'flex-end' }}>
       <PeopleOutlineIcon/>
       <AddCircleOutlineIcon onClick={handleClickOpenCreate}/>
       <Dialog open={openCreate} onClose={handleCloseCreate}>

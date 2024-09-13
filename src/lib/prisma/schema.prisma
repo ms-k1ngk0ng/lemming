@@ -13,8 +13,8 @@ model User {
   name            String
   email           String   @unique
   password        String
-  createdAt     DateTime  @default(now()) @map(name: "created_at")
-  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-  profilePicture  String?  // Optional field to store Base64-encoded image string
+  createdAt       DateTime  @default(now()) @map(name: "created_at")
+  updatedAt       DateTime  @updatedAt @map(name: "updated_at")
+  profilePic      String?  // Optional field to store Base64-encoded image string
   @@map(name: "users")
 }
