@@ -3,18 +3,32 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model User {
-  id              Int      @id @default(autoincrement())
-  name            String
-  email           String   @unique
-  password        String
-  createdAt       DateTime  @default(now()) @map(name: "created_at")
-  updatedAt       DateTime  @updatedAt @map(name: "updated_at")
-  profilePic      String?  // Optional field to store Base64-encoded image string
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String   @unique
+  password   String
+  createdAt  DateTime @default(now()) @map(name: "created_at")
+  updatedAt  DateTime @updatedAt @map(name: "updated_at")
+  profilePic String?
+
+  followedBy Follows[] @relation("followedBy")
+  following  Follows[] @relation("following")
+
   @@map(name: "users")
+}
+
+model Follows {
+  followedBy   User @relation("followedBy", fields: [followedById], references: [id])
+  followedById Int
+  following    User @relation("following", fields: [followingId], references: [id])
+  followingId  Int
+
+  @@id([followingId, followedById])
+  @@map(name: "follows")
 }
